@@ -1,0 +1,48 @@
+Upstream & third-party notices
+==============================
+
+This repository is an UNOFFICIAL, auxiliary set of notes and helper scripts. It is
+not affiliated with, endorsed by, or maintained by the Strata project or the Qwen
+team. Official resources (please use these first):
+
+- Strata engine (official repository, MIT):
+  https://github.com/Niko1221/Strata
+- Model official page (Qwen3.8-Flash-Next):
+  https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+  (also on ModelScope: https://modelscope.cn/models/Qwen/Qwen3.8-Flash-Next)
+- IQ3_S quantization used in these notes (ISTA-DASLab):
+  https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF
+- Official install guide (human): docs/INSTALL.md in the Strata repository
+- Official install guide (for AI agents): docs/AI_SETUP.md in the Strata repository
+
+Licenses (verified 2026-10-12):
+
+- Strata engine / llama.cpp (ggml): MIT (upstream LICENSE, "(c) 2026 Niko1221 and
+  the Strata contributors"). We do NOT redistribute the engine - obtain it upstream.
+- Model weights (Qwen3.8-Flash-Next and its quantizations): **Qwen Community
+  License 1.0** - NOT Apache 2.0. Permissive for use/copy/modify/merge/publish/
+  distribute/sublicense/sell/deploy/host/fine-tune/derivative works, but with two
+  conditions worth knowing:
+    1. If you use the model in a commercial product/service with more than
+       100,000,000 monthly active users or US$20,000,000 monthly revenue, the model
+       name must be prominently displayed in that product's UI.
+    2. If you run a "Model as a Service" or "AI Work Assistant" business, you must
+       obtain a separate license from Qwen before using the model commercially.
+       Internal use that does not expose the model/outputs/capabilities to third
+       parties is exempt.
+  We do NOT redistribute the weights - download them yourself from the official hub.
+  Read the full LICENSE on the model page before any commercial deployment.
+
+  ⚠️ A licensing trap we verified: the quantization repository
+  (ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF) is *labelled* `apache-2.0` by its
+  uploader, while the base model is under the Qwen Community License 1.0. A
+  quantization is a derivative work of the base weights, so the uploader's
+  apache-2.0 label cannot override the base model's terms. Assume the Qwen
+  Community License governs the weights you actually run, and verify with the
+  model page / upstream maintainers before any commercial use.
+- NVIDIA CUDA runtime / cuBLAS and other PyPI packages: their own licenses. Do not
+  commit wheels here.
+
+Version referenced in the notes: Strata v0.1.43 (llama.cpp 3cf0325). Numbers are
+hardware- and version-specific; re-measure on your own setup. Official one-click
+install always fetches the latest version.
